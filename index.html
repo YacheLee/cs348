@@ -1,23 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
   <head>
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="model.js"></script>
+    <link rel='stylesheet' type='text/css' href="css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href="css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
   </head>
-  <body style="background-color: #bbb;" onload="createEmptyBasket();">
-    <div style="text-align: center;">
-     <h1 style="color: red;">Welcome to eVeg!</h1>
+  <body onload="createEmptyBasket();">
 
-     <h2 style="color: green;">
-       &copy; 2014 InterVeg Coventry Ltd.
-       <br />
-       Fresh produce from the Midland's green countryside.
-     </h2>
+    <nav class="navbar navbar-default navbar-fixed-top color-primary-light topbar">
+      <div class="container-fluid page">
+<!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">eVeg</a>
+        </div>
 
-     <form>
-       <input type="submit" name="continue" value="click here to continue..." style="color: red;" onclick="window.open('shop.html');self.close()" />
-     </form>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="shop.html">
+              Shop
+              </a>
+            </li>
+          </ul>
+
+          <form class="navbar-form navbar-left col-md-12">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="banana">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                  </button>
+                </span>
+              </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+               Login
+              </a>
+            </li>
+            <form class="navbar-form navbar-left">
+              <li><a href="basket.html" type"button" class="btn btn-primary">Basket</a></li>
+            </form>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1>Welcome to eVeg!</h1>
+            <h5>&copy; 2014 InterVeg Coventry Ltd</h5>
+            <br />
+            <p>
+            Fresh produce from the Midland's green countryside.</p>
+            <p><a class="btn btn-primary btn-lg" href="shop.html" role="button">Shop Now</a></p>
+            <p><a class="btn btn-primary btn-lg" href="original/shop.html" role="button">Old Site</a></p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

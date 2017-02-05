@@ -11,7 +11,7 @@
     <script src="helper-funcs.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top color-primary-light topbar">
+    <nav class="navbar navbar-default navbar-static-top color-primary-light topbar">
       <div class="container-fluid page">
 <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -21,14 +21,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">eVeg</a>
+          <a class="navbar-brand" href="#">eVeg</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="shop.html">
-              Shop
+            <li><a class="">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
             </li>
           </ul>
@@ -51,6 +51,9 @@
               </a>
             </li>
             <form class="navbar-form navbar-left">
+
+            </form>
+            <form class="navbar-form navbar-left">
               <li><a href="basket.html" type"button" class="btn btn-primary">Basket</a></li>
             </form>
           </ul>
@@ -60,66 +63,45 @@
     </nav>
 
     <div class="container page">
-      <div class="page-header">
-        <h1>eVeg Shop <small>get your veg here!</small></h1>
-      </div>
-      <div class='row display-toggles'>
-        <div class='col-md-12'>
-          <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default btn-sm active" id="toggle-grid-button" onclick="javascript:setDisplayGrid(true)">
-              <span class="glyphicon glyphicon-th-large " aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default btn-sm" id="toggle-list-button" onclick="javascript:setDisplayGrid(false)">
-              <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-9 product-container">
-          <div id="product-list">
-
-          </div>
+      <h1>Shop</h1>
+      <div class='row'>
+        <div class="col-md-9">
+          <table class="table table-hover" id="product-list">
+            <th>
+              <td>Product</td>
+              <td>Description</td>
+              <td>units</td>
+              <td>quantity</td>
+              <td>add</td>
+            </th>
+          </table>
         </div>
         <div class="basket-view-mini-container col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Basket</h3>
+          <div class="basket-view-mini">
+            <h4>Basket</h4>
+            <div class="basket-view-mini-products">
+              <table class="table" id="basket-product-list">
+              </table>
             </div>
-            <div class="panel-body">
-              <div>
-                <div class="basket-view-mini-products" id="basket-product-list">
-
-                </div>
-                <div class="basket-view-mini-controls">
-                  <div class="row" style="padding-bottom:10px;">
-                    <div class="col-md-6">
-                    </div>
-                    <div class="col-md-6">
-                      <strong>Total:</strong> <span id="basket-mini-total"></span>
-                    </div>
+            <div class="basket-view-mini-controls">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text-center">
+                    <a href="basket.html" type="button" class="btn btn-default">View Basket</a>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="text-center">
-                        <a href="basket.html" type="button" class="btn btn-default">Edit Basket</a>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="text-center">
-                        <button type="button" class="btn btn-success" name="order"  onclick="window.open('order.html');self.close();" >Checkout</button>
-                      </div>
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="text-center">
+                    <a href="checkout.html" type="button" class="btn btn-success">Checkout</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div id="alert-area">
-          </div>
         </div>
       </div>
     </div>
+  </div>-->
   </body>
 </html>
 

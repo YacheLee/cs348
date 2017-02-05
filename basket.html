@@ -1,42 +1,110 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
   <head>
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="model.js"></script>
+
+    <link rel='stylesheet' type='text/css' href="css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href="css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="helper-funcs.js"></script>
   </head>
   <body>
-    <form>
-      <table>
-        <script>
-          var basket = readBasket();
-          var productDetails = getProductDetails();
-          for (var product in productDetails) {
-            if (basket[product] > 0) {
-              document.write('       <tr>\n');
-              document.write('         <td><img src="img/' + productDetails[product]["image"] + '" /></td>\n');
-              document.write('         <td>' + productDetails[product]["name"] + '</td>\n');
-              document.write('         <td>' + productDetails[product]["units"] + '</td>\n');
-              document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
-              document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 30px;" /></td>\n');
-              document.write('         <td><input name="change' + product + '" type="button" value="change quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value)" /></td>\n');
-              document.write('       </tr>\n');
-            }
-          }
-        </script>
-      </table>
-    </form>
+    <nav class="navbar navbar-default navbar-fixed-top color-primary-light topbar">
+      <div class="container-fluid page">
+<!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">eVeg</a>
+        </div>
 
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 100px;">
-      <script>
-        var totals = calculateTotals();
-        document.write('<p>Total ex VAT: ' + totals["totalnovat"] + ' includes VAT: ' + totals["vat"] + ' Total inc. VAT: ' + totals["total"] + '</p>\n');
-      </script>
-      <form>
-        <input type="button" name="continue" value="Continue Shopping" onclick="self.close();" />
-        <input type="button" name="clearbasket" value="Clear Basket" onclick="javascript:createEmptyBasket();self.close();" />
-        <input type="button" name="order" value="Order" onclick="window.open('order.html');self.close();" />
-      </form>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="shop.html">
+              Shop
+              </a>
+            </li>
+          </ul>
+
+          <form class="navbar-form navbar-left col-md-12">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="banana">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                  </button>
+                </span>
+              </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+               Login
+              </a>
+            </li>
+
+            <form class="navbar-form navbar-left">
+              <li><a href="basket.html" type"button" class="btn btn-primary">Basket</a></li>
+            </form>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+
+    </nav>
+    <div class="container page">
+      <div class="page-header">
+        <h1>Your Basket <small>review</small></h1>
+      </div>
+      <div class='row'>
+        <div class="col-md-12">
+          <div id="basket-list">
+
+          </div>
+        </div>
+      </div>
+
+      <div class='row'>
+
+        <div class="col-md-6">
+          <div id='alert-area'>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Order Details</h3>
+            </div>
+            <div class="panel-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div id="prices">
+                  </div>
+
+                </div>
+                <div class="row">
+                  <button type="button" class="btn btn-danger" name="clearbasket" onclick="javascript:createEmptyBasket();displayPrices();displayBasketView();"> Clear Basket</button>
+
+                  <div class="pull-right">
+                    <a type="button" class="btn btn-default" name="continue" href="shop.html">Continue Shopping </a>
+                    <button type="button" class="btn btn-success" name="order"  onclick="window.open('order.html');self.close();" >Checkout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </body>
 </html>
+<script>displayBasketView();displayPrices()</script>

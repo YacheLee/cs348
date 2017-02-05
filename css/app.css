@@ -1,0 +1,104 @@
+.color-primary {
+  background-color: #639833;
+}
+
+.color-primary-light {
+  background-color: #9DCF70;
+}
+
+.color-primary-lighter {
+  background-color: #c1ea9d;
+}
+
+.color-dark-light {
+  background-color: #3f6a18;
+}
+
+.color-primary-darker {
+  background-color: #264708;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+.topbar {
+  -webkit-box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.34);
+  -moz-box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.34);
+  box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.34);
+}
+
+.page {
+  max-width: 1200px;
+}
+
+.product-row {
+  height:200px;
+  background-color: red;
+}
+
+.basket-view-mini-container {
+  padding-left:20px;
+}
+
+.product-container {
+  overflow:scroll;
+  max-height: 85vh;
+}
+
+#element::-webkit-scrollbar {
+    display: none;
+}
+
+.display-toggles {
+  margin-bottom: 20px;
+}
+
+.basket-view-mini {
+  border: 1px solid grey;
+  border-radius: 5px;
+  max-height:500px;
+  min-height:500px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.image{
+  height:90px;
+  width: auto;
+}
+
+.basket-view-mini-controls {
+}
+
+.basket-view-mini-products {
+  height:370px;
+}
+
+.product-grid-item {
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.08);
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.08);
+}
+
+.product-grid-item:hover {
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+-moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+}
+
+
+.thumbnail {
+  width:100%;
+  height:auto;
+}
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
+body {
+  padding-top:70px;
+}

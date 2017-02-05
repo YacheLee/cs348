@@ -56,7 +56,7 @@ function getProductDetails() {
   productDetails["beans"]["units"] = "1kg";
   productDetails["beans"]["price"] = 1.29;
 
-  return productDetails;
+  return sortObject(productDetails);
 }
 
 function getProductList() {
@@ -97,9 +97,9 @@ function calculateTotals() {
   }
 
   totals = {};
-  totals["total"] = total.toString();
-  totals["vat"] = (total - total / 1.175).toString();
-  totals["totalnovat"] = (total / 1.175).toString();
+  totals["total"] = total.toFixed(2).toString();
+  totals["vat"] = (total - total / 1.175).toFixed(2).toString();
+  totals["totalnovat"] = (total / 1.175).toFixed(2).toString();
 
   return totals;
 }
@@ -113,6 +113,9 @@ function addToBasket(product, quantity) {
   newquantity = oldquantity + parseInt(quantity);
 
   document.cookie = product + "=" + newquantity.toString() + ";path=/";
+  alertSuccess("Added to Basket!");
+  resetQuantity(product);
+  displayBasketMiniView();
 }
 
 function removeProductFromBasket(product) {
