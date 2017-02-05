@@ -237,6 +237,7 @@ function changeQuantity(id, elem) {
   changeProductQuantity(id, elem);
   if (elem == 0) {
     removeProductFromBasket(id);
+    displayBasketView()
   } else {
     alertSuccess("Updated Basket!");
     //$('#basket-row-' + id).addClass('update-success').addClass('success');
