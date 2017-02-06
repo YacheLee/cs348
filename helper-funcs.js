@@ -45,7 +45,7 @@ function displayBasketView() {
   html += '</table>';
   if (count == 0) {
     html = `<div class="jumbotron">
-      <h1>You basket is empty!</h1>
+      <h1>Your basket is empty!</h1>
     </div>`;
   }
   $('#basket-list').empty();
@@ -293,3 +293,16 @@ function sortObject(o) {
     }
     return sorted;
 }
+
+original = 0;
+
+$(function(){
+  $(window).scroll(function(){
+    toMove = original + $(window).scrollTop() - 230;
+    $('.basket-view-mini-container ').css("margin-top", toMove);
+  });
+});
+
+$(document).ready(function() {
+  original = $('.basket-view-mini-container ').offset().top;
+});

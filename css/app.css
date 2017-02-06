@@ -54,9 +54,10 @@
 }
 
 .product-container {
-  overflow:scroll;
-  max-height: 85vh;
+  overfloeww:scroll;
+  max-heiasght: 85vh;
 }
+
 
 #element::-webkit-scrollbar {
     display: none;

@@ -97,7 +97,7 @@ function calculateTotals() {
   }
 
   totals = {};
-  if (total = 0) {
+  if (total == 0) {
     totals["total"] = 0;
     totals["vat"] = 0;
     totals["totalnovat"] = 0;
