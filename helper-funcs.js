@@ -30,17 +30,24 @@ function displayBasketView() {
   var html = `<table class='table table-hover' id='product-list'>
     <th>
       <td>Product</td>
-      <td>units</td>
-      <td>price</td>
-      <td>quanity</td>
-      <td>update</td>
+      <td>Units</td>
+      <td>Price</td>
+      <td>Quanity</td>
+      <td></td>
     </th>`;
+  var count = 0;
   for (var product in productDetails) {
     if (basket[product] > 0) {
       html += getBasketTableRow(productDetails[product], product, basket);
+      count += 1;
     }
   }
-  html += '</table>'
+  html += '</table>';
+  if (count == 0) {
+    html = `<div class="jumbotron">
+      <h1>You basket is empty!</h1>
+    </div>`;
+  }
   $('#basket-list').empty();
   $('#basket-list').append(html);
 }
@@ -52,9 +59,9 @@ function displayAsTable() {
       <th></th>
       <th>Product</th>
       <th>Description</th>
-      <th>units</th>
-      <th>quantity</th>
-      <th>add</th>
+      <th>Units</th>
+      <th>Quantity</th>
+      <th></th>
     </tr>`;
   for (var product in productDetails) {
     html += getProductTableRow(productDetails[product], product);
@@ -190,7 +197,7 @@ function getProductTableRow(product, index) {
   html += '<td><img class="img-rounded image" src="img/placeholder.png"/></td>';
   html += '<td>' + product["name"] + '</td>';
   html += '<td>' + product["description"] + '</td>';
-  html += '<td>' + product["units"] + '</td>';
+  html += '<td>' + product['units'] +`/£` + product['price'] + '</td>';
   html += `<td style="width:130px;">
       <div class="input-group">
         <span class="input-group-btn">

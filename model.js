@@ -97,10 +97,15 @@ function calculateTotals() {
   }
 
   totals = {};
-  totals["total"] = total.toFixed(2).toString();
-  totals["vat"] = (total - total / 1.175).toFixed(2).toString();
-  totals["totalnovat"] = (total / 1.175).toFixed(2).toString();
-
+  if (total = 0) {
+    totals["total"] = 0;
+    totals["vat"] = 0;
+    totals["totalnovat"] = 0;
+  } else {
+    totals["total"] = total.toFixed(2).toString();
+    totals["vat"] = (total - total / 1.175).toFixed(2).toString();
+    totals["totalnovat"] = (total / 1.175).toFixed(2).toString();
+  }
   return totals;
 }
 
@@ -184,7 +189,7 @@ function getAddress() {
 }
 
 function setCardDetails() {
-  if (document.getElementById('solo').checked) {
+  /*if (document.getElementById('solo').checked) {
     document.cookie="cardtype=Solo;path=/";
   }
   else if (document.getElementById('switch').checked) {
@@ -195,7 +200,8 @@ function setCardDetails() {
   }
   else if (document.getElementById('visa').checked) {
     document.cookie="cardtype=Visa;path=/";
-  }
+  }*/
+  document.cookie="cardtype=" + document.getElementById('type').value + ";path=/";
   document.cookie="cardnumber=" + document.getElementById('cardnumber').value + ";path=/";
   document.cookie="month=" + document.getElementById('month').value + ";path=/";
   document.cookie="year=" + document.getElementById('year').value + ";path=/";
