@@ -262,7 +262,7 @@ function getMiniBasketRow(product, quantity) {
   var html = "<tr>";
   var price = quantity * product['price'];
   html += '<td>' + product["name"] + '</td>';
-  html += '<td style="text-align:center;">£' + price + '</td>';
+  html += '<td style="text-align:center;">£' + price.toFixed(2).toString(); + '</td>';
   html += '</tr>';
   return html;
 }
