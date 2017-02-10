@@ -100,7 +100,9 @@ function getGridProduct(product, index) {
             </div>
           </div>
           <div class="col-md-6">
-            <button class="btn btn-success" type="button" onclick="javascript:addToBasket(\'` + index + `', document.getElementById('quantity` + index + `').value)" >Add To Cart</button>
+            <div class="pull-right">
+              <button class="btn btn-success" type="button" onclick="javascript:addToBasket(\'` + index + `', document.getElementById('quantity` + index + `').value)" >Add</button>
+            </div>
           </div>
         </div>
       </div>
