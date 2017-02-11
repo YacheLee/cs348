@@ -15,6 +15,7 @@ function setDisplayGrid(bool) {
 
 function displayProductList() {
   $('#product-list').empty();
+  console.log(productDetails);
   if (displayGrid === false) {
     displayAsTable();
     console.log(displayGrid);
@@ -47,6 +48,7 @@ function displayAsTable() {
 function displayAsGrid() {
   var html = "<div class='row'>";
 
+  console.log(productDetails);
   for (var product in productDetails) {
     html += getGridProduct(productDetails[product], product);
   }
@@ -57,16 +59,16 @@ function displayAsGrid() {
 
 function displayBasketMiniView() {
   console.log("redisplaybasket");
-  var productDetails = getProductDetails();
+  var productDetailsMini = getProductDetails();
   var basket = readBasket();
   var html = `<table class="table " >
     <tr>
       <th>Product</th>
       <th style="text-align:center;">Total Price</th>
     </th>`;
-  for (var product in productDetails) {
+  for (var product in productDetailsMini) {
     if (basket[product] > 0) {
-      html += getMiniBasketRow(productDetails[product], basket[product]);
+      html += getMiniBasketRow(productDetailsMini[product], basket[product]);
     }
   }
   html += "</table>";
@@ -82,7 +84,7 @@ function getGridProduct(product, index) {
 
   var html = `<div class="col-sm-6 col-md-4">
     <div class="thumbnail product-grid-item">
-      <img class="img-rounded" src="img/placeholder.png" >
+      <img class="img-rounded" src="img/` + product['image'] + `" >
       <div class="caption">
         <h2>` + product['name'] + `</h2>
         <h4><span class="small">Quantity</span> ` + product['units'] + `</h4>
@@ -115,7 +117,7 @@ function getGridProduct(product, index) {
 
 function getProductTableRow(product, index) {
   var html = "<tr>";
-  html += '<td><img class="img-rounded image" src="img/placeholder.png"/></td>';
+  html += '<td><img class="img-rounded image" src="img/' + product['image'] + '"/></td>';
   html += '<td>' + product["name"] + '</td>';
   html += '<td>' + product["description"] + '</td>';
   html += '<td>' + product['units'] + '</td>';
@@ -146,7 +148,6 @@ function getMiniBasketRow(product, quantity) {
 }
 
 function bootstrap() {
-  productDetails = getProductDetails();
   displayProductList();
   displayBasketMiniView();
 }
@@ -155,6 +156,8 @@ original = 0;
 
 $(document).ready(function(){
   original = $('.basket-view-mini-container ').offset().top;
+  productDetails = sortObject(getProductDetails());
+  bootstrap()
   $(window).scroll(function(){
     if (original - $(window).scrollTop() < 200) {
       height = $('.basket-view-mini-container').height() / 2;
@@ -168,7 +171,7 @@ $(document).ready(function(){
   });
 
   $('#search-bar-input').keyup(function() {
-    var allProductDetails = getProductDetails();
+    var allProductDetails = sortObject(getProductDetails());
     var query = $('#search-bar-input').val();
     var productList = {};
     for (product in allProductDetails) {
