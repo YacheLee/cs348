@@ -1,4 +1,5 @@
-html {
+body {
+  padding-top: 0px;
   background: url(../img/splashpage_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6,29 +7,46 @@ html {
   background-size: cover;
 }
 
-body {
-  padding-top: 0px;
-}
-
 .content {
   text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 50px;
 }
 
 h1 {
-  font-size: 140px;
+  font-size: 120px;
+  font-weight: 900;
+}
+
+h5 {
+    opacity: 0.5;
 }
 
 h2 {
-  font-size: 56px;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
 }
 
-.tagline {
-  margin:30px;
-
+h4{
+    font-style: italic;
+    font-weight: 100;
+    opacity: 0.75;
+    margin-top: -5px;
+    margin-bottom: 75px;
 }
 
-.button-area {
-  margin-top: 30px;
+.button-area a {
+  /*margin-top: 30px;*/
+  padding: 20px 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  font-size: 12pt;
 }
