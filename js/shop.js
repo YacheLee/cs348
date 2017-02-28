@@ -84,7 +84,12 @@ function getGridProduct(product, index) {
 
   var html = `<div class="col-sm-6 col-md-4">
     <div class="thumbnail product-grid-item">
-      <img class="img-rounded" src="img/` + product['image'] + `" >
+      <div class="img img-rounded" style="background-image: url('img/` + product['image'] + `')">
+        <div class="content">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <p>Quick Add</p>
+        </div>
+      </div>
       <div class="caption">
         <h2>` + product['name'] + `</h2>
         <h4><span class="small">Quantity</span> ` + product['units'] + `</h4>
