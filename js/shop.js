@@ -175,12 +175,7 @@ $(document).ready(function(){
 
   });
 
-  $(".quickadd").click(function(evt) {
-    evt.stopPropagation();
-    id = $(this).attr("id");
-    id = id.split('-')[1];
-    addToBasket(id, 1);
-  });
+
 
   $('#search-bar-input').keyup(function() {
     var allProductDetails = sortObject(getProductDetails());
@@ -205,5 +200,12 @@ $(document).ready(function(){
      if (event.which == 13) {
          event.preventDefault();
      }
+  });
+
+  $('body').on('click', '.quickadd', function(evt) {
+    evt.stopPropagation();
+    id = $(this).attr("id");
+    id = id.split('-')[1];
+    addToBasket(id, 1);
   });
 })

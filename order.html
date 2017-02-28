@@ -1,141 +1,187 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 <head>
-  <title></title>
+  <title>eVeg | Payment</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <script type="text/javascript" src="js/model.js"></script>
   <link rel='stylesheet' type='text/css' href="css/bootstrap.css">
   <link rel='stylesheet' type='text/css' href="css/app.css">
+  <link rel='stylesheet' type='text/css' href="css/order.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-  <script src="helper-funcs.js"></script>
 </head>
-<body onload="createEmptyOrder();">
-  <nav class="navbar navbar-default navbar-fixed-top color-primary-light topbar">
-    <div class="container-fluid page">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">eVeg</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="shop.html">
-            Shop
-          </a>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-
-</nav>
-<div class="container page">
-  <div class="page-header">
-    <h1>Checkout <small> Enter your details</h1>
+<body>
+  <div id='nav'>
+  </div>
+  <div class="order-header">
+    <div class="center-order-title">
+      <h1>Payment</h1>
     </div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-1">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="container-fluid">
-              <form>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h3>Name</h3>
-                    <div class="col-md-2">
-                      <label for="title">Title</label>
-                      <select class="form-control" id="title">
-                        <option>Mr</option>
-                        <option>Mrs</option>
-                        <option>Ms</option>
-                        <option>Miss</option>
-                      </select>
-                    </div>
-                    <div class="col-md-5">
-                      <label for="firstname">First Name</label>
-                      <input type="text" class="form-control" name="firstname" id="firstname" value="" />
-                    </div>
-                    <div class="col-md-5">
-                      <label for="surname">Surname</label>
-                      <input type="text" class="form-control" name="surname" id="surname" value="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <h3>Address</h3>
-                    <div class="col-md-12" >
-                      <label for="number">Number</label>
-                      <input type="text" class="form-control" name="number" id="number" value="" />
-                    </div>
-                    <div class="col-md-12" >
-                      <label for="street">Street</label>
-                      <input type="text" class="form-control" name="street" id="street" value=""  />
-                    </div>
-                    <div class="col-md-12" >
-                      <label for="postcode">Postcode</label>
-                      <input type="text" class="form-control" name="postcode" id="postcode" value=""  />
-                    </div>
-                    <div class="col-md-12" >
-                      <label for="city">City</label>
-                      <input type="text" class="form-control" name="city" id="city" value=""  />
-                    </div>
-                    <div class="col-md-12" >
-                      <label for="country">Country</label>
-                      <input type="text" class="form-control" name="country" id="country" value=""  />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <h3>Payment</h3>
-                    <div class="col-md-12">
-                      <label for='type'>Type</label>
-                      <select class="form-control" id="type" >
-                        <option>Solo</option>
-                        <option>Switch</option>
-                        <option>Mastercard</option>
-                        <option>Visa</option>
-                      </select>
-                    </div>
-                    <div class="col-md-12">
-                      <label for="cardnumber">Card Number</label>
-                      <input type="text" name="cardnumber" class="form-control" id="cardnumber" value="" />
-                    </div>
-                    <div class="col-md-12">
-                      <label for="month">Expiry Date</label>
-                      <div class="row">
-                        <div class="col-md-3">
-                          <input type="text" name="month" class="form-control" id="month" value="" />
-                        </div>
-                        <div class="col-md-3">
-                          <input type="text" name="year" class="form-control" id="year" value="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="pull-right">
-                        <input class="btn btn-danger" type="button" name="cancel" value="Cancel" onclick="self.close()" />
-                        <input class="btn btn-success" type="button" name="proceed" value="Proceed" onclick="setName();setAddress();setCardDetails();window.open('invoice.html');self.close();"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="payment-box">
+
+        <!-- area for the progression box -->
+        <div class="container-fluid">
+
+
+          <div class="progress row">
+            <div class="col-xs-3 node">
+              <h4>Name</h4>
+              <div class="circle circle-filled" id="c0"></div>
+            </div>
+
+            <div class="col-xs-3 node">
+              <h4>Address</h4>
+              <div class="circle" id="c1"></div>
+            </div>
+
+            <div class="col-xs-3 node">
+              <h4>Payment</h4>
+              <div class="circle" id="c2"></div>
+            </div>
+
+            <div  class="col-xs-3 node">
+              <h4>Finished</h4>
+              <div class="circle" id="c3"></div>
             </div>
           </div>
         </div>
+        <div class="form-1 row" >
+          <div class="col-md-8 col-md-offset-2">
+            <form>
+              <div id="collection-1">
+
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <select class="form-control" id="title">
+                      <option>Mr</option>
+                      <option>Mrs</option>
+                      <option>Ms</option>
+                      <option>Miss</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" value="" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" class="form-control" name="surname" id="surname" value="" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="collection-2">
+                <div class="col-md-12" >
+                  <div class="form-group">
+                    <label for="number">Number</label>
+                    <input type="text" class="form-control" name="number" id="number" value="" />
+                  </div>
+                </div>
+                <div class="col-md-12" >
+                  <div class="form-group">
+                    <label for="street">Street</label>
+                    <input type="text" class="form-control" name="street" id="street" value=""  />
+                  </div>
+                </div>
+                <div class="col-md-12" >
+                  <div class="form-group">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" class="form-control" name="postcode" id="postcode" value=""  />
+                  </div>
+                </div>
+                <div class="col-md-12" >
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" name="city" id="city" value=""  />
+                  </div>
+                </div>
+                <div class="col-md-12" >
+                  <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" name="country" id="country" value=""  />
+                  </div>
+                </div>
+              </div>
+
+              <div id="collection-3">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for='type'>Type</label>
+                    <select class="form-control" id="type" >
+                      <option>Solo</option>
+                      <option>Switch</option>
+                      <option>Mastercard</option>
+                      <option>Visa</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="cardnumber">Card Number</label>
+                    <input type="text" name="cardnumber" class="form-control" id="cardnumber" value="" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="month">Expiry Date</label>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <input type="text" name="month" class="form-control" id="month" value="" />
+                      </div>
+                      <div class="col-md-3">
+                        <input type="text" name="year" class="form-control" id="year" value="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="collection-4">
+                <div class="col-md-12">
+                  <div class="page-header">
+                    Click finish to confirm!
+                  </div>
+                  <div class="col-md-6 col-offset-3" id="finished">
+                    <button type="button" class="btn btn-success btn-lg" onclick="finish()">Finish</button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class='col-md-2' id="back">
+                <button type="button" class="btn btn-success" onclick="backPage()">Back</button>
+              </div>
+
+              <div class='col-md-2' id="next">
+                <button type="button" class="btn btn-success" onclick="nextPage()">Next</button>
+              </div>
+
+
+            </form>
+
+          </div>
+        </div>
+
+        <span style="color:white;">.</span>
       </div>
     </div>
   </div>
+
+  <div class="footer color-primary-light">
+
+  </div>
 </body>
 </html>
+<script src='js/nav.js'></script>
+<script src="js/order.js"></script>
+<script src="js/helper-funcs.js"></script>
