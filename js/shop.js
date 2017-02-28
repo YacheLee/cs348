@@ -84,8 +84,8 @@ function getGridProduct(product, index) {
 
   var html = `<div class="col-sm-6 col-md-4">
     <div class="thumbnail product-grid-item">
-      <div class="img img-rounded" style="background-image: url('img/` + product['image'] + `')">
-        <div class="content">
+      <div class="img img-rounded" style="background-image: url('img/` + product['image'] + `')" >
+        <div class="content quickadd" id="quickadd-` + index + `">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             <p>Quick Add</p>
         </div>
@@ -173,6 +173,13 @@ $(document).ready(function(){
       $('.basket-view-mini-container ').css("margin-top", 0);
     }
 
+  });
+
+  $(".quickadd").click(function(evt) {
+    evt.stopPropagation();
+    id = $(this).attr("id");
+    id = id.split('-')[1];
+    addToBasket(id, 1);
   });
 
   $('#search-bar-input').keyup(function() {
