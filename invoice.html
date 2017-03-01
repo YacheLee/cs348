@@ -1,13 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" style="height: 100%;">
   <head>
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="model.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='js/helper-funcs.js'></script>
+    <script type="text/javascript" src="js/model.js"></script>
+    <link rel='stylesheet' type='text/css' href="css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href="css/app.css">
+    <link rel='stylesheet' type='text/css' href="css/invoice.css">
   </head>
-  <body style="height: 100%; font-family: monospace;">
+  <body>
+    <div id='nav'>
+    </div>
+    <div class='invoice-header'>
+        <div class="center-invoice-title">
+          <h1>thank you!</h1>
+        </div>
+    </div>
+    <div class="row">
+      <div class='col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 receipt'>
+
+        <div class="receipt-header">
+          <h2>eVeg</h2>
+          <p>
+            lorum ipsun i couldnt read this line
+          </p>
+        </div>
+
+        <div class='details-area'>
+
+        </div>
+
+        <div class='product-area'>
+
+        </div>
+
+        <div class='receipt-header'>
+          Anther line i couldnt read sorry!
+        </div>
+
+      </div>
+    </div>
+
+    <div class='row' style='margin-bottom:90px;'>
+      <div class='col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3'>
+        <div class='col-xs-6'>
+          <button type='button' class='btn btn-success btn-lg' style='width:100%;'>Print Invoice</button>
+
+        </div>
+        <div class='col-xs-6'>
+          <button type='button' class='btn btn-success btn-lg' style='width:100%;' onclick='newShop();'>Begin New Order</button>
+
+        </div>
+      </div>
+    </div>
     <script>
-      document.write('    <textarea style="width: 100%; height: 100%;">\n');
+      /*document.write('    <textarea style="width: 100%; height: 100%;">\n');
       document.write('                                  INVOICE\n\n\n');
       clientName = getName();
       document.write('       for ' + clientName['title'] + ' ' + clientName['firstname'] + ' ' + clientName['surname'] + '\n');
@@ -33,9 +82,17 @@
       document.write('         ' + totals["totalnovat"] + ' VAT paid\n\n');
 
       cardDetails = getCardDetails();
-      document.write('         Paid by ' + cardDetails['cardtype'] + ' ' + cardDetails['cardnumber'].substr(-4) + ' (only last four digits given)\n');
+      //document.write('         Paid by ' + cardDetails['cardtype'] + ' ' + cardDetails['cardnumber'].substr(-4) + ' (only last four digits given)\n');
       document.write('      ------------------------------------------------------------------------------\n');
-      document.write('    </textarea>\n');
+      document.write('    </textarea>\n');*/
     </script>
+    <div class='footer color-primary-light'>
+
+    </div>
+
   </body>
+
 </html>
+<script src='js/nav.js'></script>
+<script src='js/invoice.js'></script>
+<script>render();</script>
