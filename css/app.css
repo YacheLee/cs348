@@ -153,3 +153,125 @@ body {
 #nav .nav-menu-item a {
     transition: all 0.3s ease-in-out;
 }
+
+.live-chat {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+
+.chat-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+    background-color: #5cb85c;
+    z-index: 99;
+    box-shadow: 5px 5px 50px 5px rgba(0,0,0,0.75);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.chat-btn:hover {
+    background-color: #499449;
+}
+
+.live-chat .chat-icon {
+    color: white;
+    font-size: 25px;
+    transform: rotate(-10deg);
+}
+
+.chat-box {
+    background-color: #eee;
+    width: 350px;
+    box-shadow: 5px 5px 50px 5px rgba(0,0,0,0.75);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: none;
+}
+
+.chat-box .chat-header {
+    background-color: #5cb85c;
+    text-align: center;
+    color: white;
+    padding: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+
+.chat-box .chat-header .chat-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 0.75;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.chat-box .chat-header .chat-close:hover {
+    opacity: 1;
+}
+
+.chat-box .chat-header h6 {
+    font-weight: 900;
+    margin-bottom: 5px;
+    font-size: 12pt;
+}
+
+.chat-box .chat-header p {
+    font-size: 10pt;
+    opacity: 0.5;
+}
+
+.chat-box .chat-convo {
+    height: 350px;
+    padding: 20px;
+}
+
+.chat-box .chat-convo .chat-date {
+    text-align: center;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 8pt;
+}
+
+.chat-box .chat-thread {
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5em 2em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.chat-box .chat-thread:nth-of-type(even){
+    transform: translateX(-10px);
+}
+
+.chat-box .chat-thread:nth-of-type(odd){
+    transform: translateX(10px);
+    background-color: white;
+    color: black;
+    float: right;
+}
+
+.chat-box .chat-thread p{
+    margin: 0px;
+}
+
+.chat-box .chat-msg {
+    padding: 12px;
+    background-color: white;
+}
+
+.chat-box .chat-msg input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    outline: none;
+}
